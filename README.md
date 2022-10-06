@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+# Goal of this repo
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This simple app has been built for the [Intersection Conference 2022](https://www.intersection-conference.eu/schedule) I attended as a speaker.
+It aims to show how we can leverage the Provider Pattern in React to avoid the prop drilling issue.
+Feel free to reach out to me for any info.
 
 ## Available Scripts
 
@@ -28,6 +30,8 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), so you can also run:
 
 ### `npm run eject`
 
