@@ -4,6 +4,28 @@ This simple app has been built for the [Intersection Conference 2022](https://ww
 It aims to show how we can leverage the Provider Pattern in React to avoid the prop drilling issue.
 Feel free to reach out to me for any info.
 
+## What it does
+
+We developed a fake app where you can enter some information (of the same type) for each module.
+
+![](https://i.imgur.com/WnNAwmZ.png)
+
+Once you save, the information are stored inside the page state and switching between modules keeps the information previously saved.
+
+![](https://i.imgur.com/l7Zwj3U.png)
+
+When saving, we simulate a request to a server (we actually use `setTimeout` to do that) and, once completed, we give a feedback plus we show the saved data below the form.
+
+![](https://i.imgur.com/boLBTfj.png)
+
+By clicking "Cancel" you initialize the form to its original state with all the empty fields, if you save, such values will be persisted accordingly.
+
+If you refresh the page, the entire app state will be initialized.
+
+## Why should I care about this app?
+
+As mentioned above, the app is just a demo made for the [Intersection Conference 2022](https://www.intersection-conference.eu/schedule) where I tried to spread the word about the Provider Pattern in React. I like it so much because it allows us to avoid prop drilling and makes the code cleaner, easier to maintain and less error-prone. For any concern, thought or whatever regarding software, feel free to reach out to me, I'll be happy to discuss.
+
 ## Available Scripts
 
 In the project directory, you can run:
