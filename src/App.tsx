@@ -1,24 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './styles.css';
+import { Sidebar } from './components/Sidebar';
+import { PageContent } from './components/PageContent';
+import { AppPageStateProvider } from './context/app-page-state';
 
+/**
+ * This component does not pass any prop to any component, it is just wrapped
+ * with the context and all the child components will take what they need from there.
+ */
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AppPageStateProvider>
+        <Sidebar />
+        <PageContent />
+      </AppPageStateProvider>
     </div>
   );
 }
