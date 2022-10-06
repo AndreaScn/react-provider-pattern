@@ -6,7 +6,8 @@
   --color-turquoise0: #00abc7;
   --color-turquoise1: #33bcd2;
   --color-turquoise2: #33bcd2;
-  --color-turquoise3: #ecfafc;
+  --color-turquoise3: #99dde9;
+  --color-turquoise4: #ecfafc;
   --color-white: #ffffff;
   --border-radius: 4px;
   --spacing-half: 8px;
@@ -55,11 +56,11 @@ body {
 
 .sidebar__button {
   background: transparent;
-  padding: var(--spacing-regular);
-  border: 1px solid var(--color-white);
+  border: 1px solid transparent;
   border-radius: 4px;
   color: var(--color-white);
   transition: 0.3s linear;
+  font-size: 24px;
 }
 
 .sidebar {
@@ -88,6 +89,15 @@ ul {
 
 .sidebar__listItem span {
   white-space: nowrap;
+}
+
+.sidebar__listItem.sidebar__listItem-selected {
+  color: var(--color-turquoise2);
+}
+
+.sidebar__listItem:hover,
+.sidebar__listItem.sidebar__listItem-selected:hover {
+  color: var(--color-turquoise3);
 }
 
 .sidebar__icon {
@@ -191,7 +201,7 @@ ul {
 }
 
 .button__secondary:hover {
-  background: var(--color-turquoise3);
+  background: var(--color-turquoise4);
 }
 
 /* DATA DISPLAY */

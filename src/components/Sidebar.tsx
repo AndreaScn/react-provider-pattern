@@ -26,7 +26,10 @@ const menuItems: {
 ];
 
 export const Sidebar = () => {
-  const { dispatch } = useAppPageState();
+  const {
+    dispatch,
+    pageState: { selectedModule },
+  } = useAppPageState();
   const [isOpen, setIsOpen] = useState(true);
 
   const onMenuItemSelect = useCallback(
@@ -42,22 +45,28 @@ export const Sidebar = () => {
         <FontAwesomeIcon icon={faBars} />
       </button>
       <ul>
-        {menuItems.map((item) => (
-          <li key={item.title}>
-            <div
-              className={'sidebar__listItem'}
-              onClick={() => onMenuItemSelect(item.moduleId, item.title)}>
-              <FontAwesomeIcon className={'sidebar__icon'} icon={item.icon} />
-              <CSSTransition
-                in={isOpen}
-                timeout={200}
-                classNames={'fade'}
-                unmountOnExit>
-                <span>{item.title}</span>
-              </CSSTransition>
-            </div>
-          </li>
-        ))}
+        {menuItems.map((item) => {
+          const isItemSelected = selectedModule === item.moduleId;
+
+          return (
+            <li key={item.title}>
+              <div
+                className={cx('sidebar__listItem', {
+                  'sidebar__listItem-selected': isItemSelected,
+                })}
+                onClick={() => onMenuItemSelect(item.moduleId, item.title)}>
+                <FontAwesomeIcon className={'sidebar__icon'} icon={item.icon} />
+                <CSSTransition
+                  in={isOpen}
+                  timeout={200}
+                  classNames={'fade'}
+                  unmountOnExit>
+                  <span>{item.title}</span>
+                </CSSTransition>
+              </div>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );
